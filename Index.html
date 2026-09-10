@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUGURI DAVIDONE!</title>
+    <style>
+        /* Layout centrato della pagina */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            /* Immagine ora presa dalla cartella "immagini" */
+            background-image: url('immagini/Banner_18IMPERFETTO.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #111; /* fallback colore se immagine non disponibile */
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            /* centriamo il box verticalmente e orizzontalmente */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px; /* piccolo padding per i bordi su schermi piccoli */
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 3px 3px 0px #000;
+            animation: bounce 1s infinite alternate;
+            margin: 0 0 1rem 0;
+        }
+
+        .box {
+            /* leggermente trasparente per vedere lo sfondo ma mantenere leggibilità */
+            background: rgba(255,255,255,0.92);
+            color: #333;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
+            width: 100%;
+            /* Centriamo il contenuto dentro il box */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+        }
+
+        .box img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px dashed #ff0055;
+            margin: 0;
+        }
+
+        /* Stile del 'bottone' di navigazione */
+        .nav-button {
+            display: inline-block;
+            background-color: #ff0055;
+            color: #000;
+            font-size: 1.05rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 8px;
+            text-decoration: none;
+            transition: 0.15s transform, 0.15s background-color;
+        }
+        .nav-button:hover {
+            background-color: #ff0055;
+            transform: translateY(-3px);
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        /* Miglioramenti per schermi piccoli */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6rem; }
+            .box { padding: 18px; gap: 10px; }
+            .box img { width: 140px; height: 140px; }
+            .nav-button { padding: 10px 20px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+        <h1>🦇 BUON COMPLEANNO! 🦇</h1>
+
+        <div class="box">
+            <h2 style="margin:0;">Accesso a D4V1Jx:</h2>
+
+            <!-- Se preferisci non mostrare l'immagine due volte (background + immagine nella box) rimuovi questo <img> -->
+            <img src="immagini/Icona_Davide.png" alt="Icona Davide">
+
+            <p style="margin:0.4rem 0 0 0;">Esegui l'accesso al tuo account per rivivere tutte le emozioni e i ricordi di quando eri minorenne.</p>
+            <p style="margin:0;">Premi il pulsante per continuare.</p>
+
+            <!-- Link di navigazione interno al box -->
+            <a class="nav-button" href="profilo.html" role="button">CLICCA QUI PER CONTINUARE</a>
+        </div>
+    </div>
+
+</body>
+</html>
