@@ -48,6 +48,7 @@
             color: #1a1a1a;
         }
         .message-box p {
+            margin: unshift;
             margin: 0;
             color: #333;
             line-height: 1.45;
@@ -74,7 +75,7 @@
             align-items: start;
         }
 
-        /* Tutte le righe: 3 colonne */
+        /* Tutte le righe: 3 colonne con allineamento rigoroso */
         .row-3 {
             grid-template-columns: repeat(3, 1fr);
         }
@@ -131,13 +132,13 @@
 
     <!-- Contenitore centrale bianco-avorio dove puoi scrivere il messaggio -->
     <main class="message-box" role="main" aria-label="Messaggio centrale">
-        <h2>📷 GALLERIA 📸</h2>
+        <h2>📷 GALLERIA 📷</h2>
         <p>
-           Questa sezione è dedicata alle foto che abbiamo fatto le due volte che ci siamo incontrati, e man mano le aggiornerò haha
+            Questa sezione è dedicata alle foto che abbiamo fatto le due volte che ci siamo incontrati, e man mano le aggiornerò haha
         </p>
     </main>
 
-    <!-- Galleria: tutte le righe con 3 immagini -->
+    <!-- Galleria: 2 righe esatte da 3 immagini ciascuna, nomi originali mantenuti -->
     <section class="gallery" aria-label="Galleria immagini">
         <div class="gallery-row row-3" aria-hidden="false">
             <img src="immagini/Davide1.jpeg" alt="Foto 1">
@@ -152,7 +153,7 @@
         </div>
     </section>
 
-    <!-- Pulsante indietro (stessi colori dei pulsanti precedenti) -->
+    <!-- Pulsante indietro -->
     <div class="back-wrapper">
         <a class="btn-back" href="index.html" onclick="event.preventDefault(); history.back();">Indietro</a>
     </div>
