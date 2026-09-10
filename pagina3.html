@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Profilo</title>
+    <style>
+        /* Layout e sfondo */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            /* Immagine presa dalla cartella "immagini" */
+            background-image: url('immagini/Banner_18IMPERFETTO.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #111; /* fallback colore se immagine non disponibile */
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Contenitore centrale bianco-avorio */
+        .message-box {
+            background: #fffaf0; /* bianco avorio */
+            color: #222;
+            padding: 36px 28px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            max-width: 780px;
+            width: 100%;
+            text-align: center;
+            margin: 28px 0; /* spazio sopra e sotto */
+        }
+        .message-box h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+        }
+        .message-box p {
+            margin: 0;
+            color: #333;
+            line-height: 1.45;
+            font-size: 1.05rem;
+        }
+
+        /* Galleria */
+        .gallery {
+            width: 100%;
+            max-width: 1100px;
+            margin: 18px 0 12px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 8px;
+        }
+
+        .gallery-row {
+            width: 100%;
+            display: grid;
+            gap: 16px;
+            align-items: start;
+        }
+
+        /* Tutte le righe: 3 colonne */
+        .row-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 420px; /* dimensione pensata per immagini verticali */
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            display: block;
+        }
+
+        /* Pulsante "Indietro" sotto la galleria */
+        .back-wrapper {
+            margin: 18px 0 40px 0;
+        }
+        .btn-back {
+            display: inline-block;
+            background: #ff0055;
+            color: #fffaf0; /* testo bianco-avorio */
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+            transition: transform 0.12s ease, background 0.12s ease;
+            text-align: center;
+        }
+        .btn-back:hover {
+            transform: translateY(-4px);
+            background: #e6004a;
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .gallery img { height: 380px; }
+            .row-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 820px) {
+            .gallery img { height: 340px; }
+            .row-3 { grid-template-columns: repeat(2, 1fr); } /* 2 colonne su tablet */
+        }
+        @media (max-width: 480px) {
+            .gallery img { height: 320px; }
+            .row-3 { grid-template-columns: 1fr; } /* 1 col su mobile */
+            .message-box { padding: 20px; }
+            .btn-back { padding: 12px 20px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenitore centrale bianco-avorio dove puoi scrivere il messaggio -->
+    <main class="message-box" role="main" aria-label="Messaggio centrale">
+        <h2>📷 GALLERIA 📸</h2>
+        <p>
+           Questa sezione è dedicata alle foto che abbiamo fatto le due volte che ci siamo incontrati, e man mano le aggiornerò haha
+        </p>
+    </main>
+
+    <!-- Galleria: tutte le righe con 3 immagini -->
+    <section class="gallery" aria-label="Galleria immagini">
+        <div class="gallery-row row-3" aria-hidden="false">
+            <img src="immagini/Davide1.jpeg" alt="Foto 1">
+            <img src="immagini/Davide2.jpg" alt="Foto 2">
+            <img src="immagini/Davide4.jpg" alt="Foto 4">
+        </div>
+
+        <div class="gallery-row row-3" aria-hidden="false">
+            <img src="immagini/Davide5.jpg" alt="Foto 5">
+            <img src="immagini/Davide6.jpg" alt="Foto 6">
+            <img src="immagini/Davide7.jpg" alt="Foto 7">
+        </div>
+    </section>
+
+    <!-- Pulsante indietro (stessi colori dei pulsanti precedenti) -->
+    <div class="back-wrapper">
+        <a class="btn-back" href="index.html" onclick="event.preventDefault(); history.back();">Indietro</a>
+    </div>
+
+</body>
+</html>
